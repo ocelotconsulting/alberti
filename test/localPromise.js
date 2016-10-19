@@ -12,6 +12,6 @@ const localPromise = (promise) =>
   .then((result) => {
     localContext.succeed(result)
   })
-  .catch((e) => winston.error(`Received error ${e.stack}`))
+  .catch((e) => winston.error(`Received error ${JSON.stringify(e)}: ${e.stack}`))
 
 module.exports = localPromise
