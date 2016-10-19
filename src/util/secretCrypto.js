@@ -10,9 +10,9 @@ const decryptSecret = (key, cipherText) => {
 
 const encryptSecret = (key, plainText) => {
   const cipher = crypto.createCipher(config['cipher-algorithm'], key)
-  var crypted = cipher.update(plainText, 'utf8', 'hex')
-  crypted += cipher.final('hex')
-  return crypted
+  var enc = cipher.update(plainText, 'utf8', 'hex')
+  enc += cipher.final('hex')
+  return enc
 }
 
 module.exports = { decryptSecret, encryptSecret }
