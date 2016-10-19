@@ -1,8 +1,8 @@
-const getDynamoDB = require('./aws/sdk/getDynamoDB')
+const getDynamoDBDocumentClient = require('./aws/sdk/getDynamoDBDocumentClient')
 const winston = require('winston')
 
 const listSecrets = (TableName) =>
-  getDynamoDB().scan({
+  getDynamoDBDocumentClient().scan({
     TableName,
     ExpressionAttributeNames: {
       '#n': 'name'

@@ -1,8 +1,8 @@
-const getDynamoDB = require('./aws/sdk/getDynamoDB')
+const getDynamoDBDocumentClient = require('./aws/sdk/getDynamoDBDocumentClient')
 const winston = require('winston')
 
 const queryLatestSecretVersion = (TableName, name) =>
-  getDynamoDB().query({
+  getDynamoDBDocumentClient().query({
     TableName,
     Limit: 1,
     ScanIndexForward: false,

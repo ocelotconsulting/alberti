@@ -1,7 +1,7 @@
-const getDynamoDB = require('./aws/sdk/getDynamoDB')
+const getDynamoDBDocumentClient = require('./aws/sdk/getDynamoDBDocumentClient')
 
 const putSecretVersion = (TableName, Item, ConditionExpression) =>
-  getDynamoDB().put({
+  getDynamoDBDocumentClient().put({
     TableName,
     Item,
     ConditionExpression,

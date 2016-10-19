@@ -1,8 +1,8 @@
-const getDynamoDB = require('./aws/sdk/getDynamoDB')
+const getDynamoDBDocumentClient = require('./aws/sdk/getDynamoDBDocumentClient')
 const winston = require('winston')
 
 const getSecretVersion = (version) => (TableName, name) =>
-  getDynamoDB().get({
+  getDynamoDBDocumentClient().get({
     TableName,
     Key: {
       name,
