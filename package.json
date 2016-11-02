@@ -1,11 +1,7 @@
 {
   "name": "alberti",
-  "version": "1.0.0",
-  "description": "A secret management system.",
-  "scripts": {
-    "start": "node ./app",
-    "dev": "cross-env NODE_ENV=development node app.js"
-  },
+  "version": "0.0.1",
+  "description": "A library for a secret management system",
   "main": "lib",
   "keywords": [
     "secret",
