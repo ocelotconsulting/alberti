@@ -1,4 +1,5 @@
-const putSecret = require('../src/putSecret.js')
+const putSecret = require('../lib/putSecret.js')
 const localPromise = require('./localPromise')
+const config = require('../config/default.json')
 
-localPromise(putSecret('test', 'abc123', 1, { }))
+localPromise(putSecret(config['master-cmk-alias'], config['aws-region'], config['secret-table'], config['digest'])('test', 'abc123', 1, { }))

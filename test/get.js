@@ -1,4 +1,5 @@
-const getSecret = require('../src/getSecret')
+const getSecret = require('../lib/getSecret')
 const localPromise = require('./localPromise')
+const config = require('../config/default.json')
 
-localPromise(getSecret('test', 1, { }))
+localPromise(getSecret(config['aws-region'], config['secret-table'])('test', 1, { }))
